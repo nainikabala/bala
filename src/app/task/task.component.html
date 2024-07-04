@@ -1,0 +1,55 @@
+
+<section class="text-gray-600 body-font">
+    <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+      <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+        <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Data Management</h1>
+        <p class="mb-8 leading-relaxed">Our cutting-edge project seamlessly fuses Angular, Spring Boot, and Neo4j, crafting an advanced data management ecosystem. The Angular-powered frontend boasts a sleek, dynamic, and responsive interface, allowing users to effortlessly input data. Upon submission, the data flows smoothly to a robust Spring Boot backend, where sophisticated business logic is executed. This backend then communicates with the Neo4j database, ensuring efficient storage and management within its intricate graph-based structure. By harnessing Angular's powerful client-side prowess, Spring Boot's resilient server-side capabilities, and Neo4j's state-of-the-art graph database technology, our system delivers unparalleled performance, scalability, and adept handling of complex data relationships. This synergy guarantees a seamless, efficient, and user-friendly data management and retrieval experience, setting a new standard in technological integration.</p>
+        <div class="flex w-full md:justify-start justify-center items-end">
+          <div class="relative mr-4 md:w-full lg:w-full xl:w-1/2 w-2/4">
+            <form (ngSubmit)="createTask()">
+              <div class="row mt-2">
+                <div class="col-6 ">
+                  <input type="text" style="border: 2px solid #000;" class="form-control" [(ngModel)]="newTask.name" name="newTaskName">
+                </div>
+                <div class="col-6" >
+                  <button class="btn btn-success" class="inline-flex text-white bg-yellow-500 border-0 py-2 px-6 focus:outline-none hover:bg-yellow-600 rounded text-lg" type="submit">Add Data</button>
+                </div>
+              </div>
+              <div class="row  mt-2">
+                <div  class="col-6">
+                  <div *ngIf="!(tasks.length > 0); else taskList"></div>
+                  <h3 style="margin-top: 10px;">No Data</h3>
+                </div>
+                <ng-template #taskList>
+                  <ul class="list-group" *ngFor="let task of tasks">
+                    <li class="list-group-item bg-secondary text-light">
+                      <div class="row">
+                        <div class="col-6">
+                          <p>{{task.name}}</p>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </ng-template>
+              </div>
+            </form>
+
+          </div>
+        </div>
+        <p class="text-sm mt-2 text-gray-500 mb-8 w-full">Insert Data For Neo4j</p>
+        <div class="flex lg:flex-row md:flex-col">
+
+
+        </div>
+      </div>
+      <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+        <img class="object-cover object-center rounded" alt="hero" src="https://img.freepik.com/premium-photo/digital-data-flow-road-concept-cyber-global-communication-coding-with-graphic-creating-vision-fast-speed-transfer-show-agile-digital-transformation-disruptive-innovation_31965-30335.jpg">
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
